@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:columnOrderPreserved="true">
+
+        <TextView
+            style="@style/TextViewStyle.Bold.Medium.MorePadding"
+            android:labelFor="@id/etPlayerName"
+            android:text="@string/playerName"/>
+
+        <EditText
+            style="@style/EditTextStyle"
+            android:id="@+id/etPlayerName"
+            android:layout_width="250dp"
+            android:inputType="text"
+            android:maxLength="30"/>
+
+        <TextView
+            style="@style/TextViewStyle.Bold.Medium.MorePadding"
+            android:labelFor="@id/etPlayerAge"
+            android:text="@string/playerAge"
+            android:visibility="gone"/>
+
+        <EditText
+            android:id="@+id/etPlayerAge"
+            style="@style/EditTextStyle"
+            android:layout_width="50dp"
+            android:inputType="number"
+            android:maxLength="2"
+            android:visibility="gone"/>
+
+        <TextView
+            style="@style/TextViewStyle.Bold.Medium.MorePadding"
+			android:labelFor="@id/tvPlayerBatStyle"
+            android:text="@string/playerBattingStyle"/>
+
+		<LinearLayout>
+
+			<TextView
+				android:id="@+id/tvPlayerBatStyle"
+				style="@style/TextViewStyle"
+				android:text="@string/selectBatStyle" />
+
+			<Button
+				android:id="@+id/btnSelectPlayerBatStyle"
+				style="@style/ButtonStyle.Small"
+				android:drawableStart="@drawable/ic_edit" />
+
+		</LinearLayout>
+
+		<TextView
+            style="@style/TextViewStyle.Bold.Medium.MorePadding"
+			android:labelFor="@id/tvPlayerBowlStyle"
+            android:text="@string/playerBowlingStyle"/>
+
+		<LinearLayout>
+
+			<TextView
+				android:id="@+id/tvPlayerBowlStyle"
+				style="@style/TextViewStyle"
+				android:text="@string/selectBowlStyle" />
+
+			<Button
+				android:id="@+id/btnSelectPlayerBowlStyle"
+				style="@style/ButtonStyle.Small"
+				android:drawableStart="@drawable/ic_edit" />
+
+		</LinearLayout>
+
+		<CheckBox
+            style="@style/TextViewStyle.Bold.Medium.MorePadding"
+            android:id="@+id/cbIsPlayerWK"
+            android:checked="false"
+            android:text="@string/isPlayerWK"
+            android:textAlignment="viewStart"
+            android:layout_columnSpan="2"/>
+
+		<View
+			style="@style/LineSeparator.Dark.Margin"
+			android:layout_columnSpan="2" />
+
+		<TextView
+			style="@style/TextViewStyle.Bold.Medium.MorePadding"
+			android:labelFor="@id/tvTeams"
+			android:text="@string/teamCount" />
+
+		<LinearLayout>
+
+			<TextView
+				android:id="@+id/tvTeams"
+				style="@style/TextViewStyle"
+				android:text="@string/none" />
+
+			<Button
+				android:id="@+id/btnPlayerManageTeams"
+				style="@style/ButtonStyle.Small"
+				android:drawableStart="@drawable/ic_assign" />
+
+		</LinearLayout>
+
+	</GridLayout>
+
+	<View style="@style/LineSeparator.Dark.Margin" />
+
+	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnPlayerSave"
+            style="@style/ButtonStyle.Medium"
+            android:drawableTop="@drawable/ic_save"
+            android:contentDescription="@string/save"
+            android:text="@string/save"/>
+
+        <Button
+            android:id="@+id/btnPlayerDelete"
+            style="@style/ButtonStyle.Medium"
+            android:drawableTop="@drawable/ic_delete"
+            android:contentDescription="@string/delete"
+            android:text="@string/delete"
+			android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btnPlayerClear"
+            style="@style/ButtonStyle.Medium"
+            android:drawableTop="@drawable/ic_clear"
+            android:contentDescription="@string/clear"
+            android:text="@string/clear"/>
+
+    </LinearLayout>
+
+	<View style="@style/LineSeparator.Dark.Margin" />
+
+	<Button
+		android:id="@+id/btnPlayerShowStats"
+		style="@style/ButtonStyle"
+		android:layout_gravity="center_horizontal"
+		android:contentDescription="@string/showStatistics"
+		android:text="@string/showStatistics"
+		android:visibility="gone" />
+
+</LinearLayout>

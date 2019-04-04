@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center_vertical"
+    android:gravity="center_vertical"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	tools:context=".activity.TeamSelectActivity">
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+        android:foregroundGravity="center_horizontal"
+        app:layout_constraintTop_toTopOf="parent">
+
+			<android.support.v7.widget.RecyclerView
+				android:id="@+id/rcvTeamList"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+                android:layout_marginBottom="60dp"/>
+
+	</ScrollView>
+
+	<LinearLayout
+		style="@style/LinearLayoutStyleSubmit"
+		android:id="@+id/llTeamSelectButtons"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+		<Button
+			style="@style/ButtonStyle.Submit"
+			android:id="@+id/btnTeamSelectOK"
+			android:text="@string/ok"/>
+
+		<Button
+			style="@style/ButtonStyle.Submit"
+			android:id="@+id/btnTeamSelectCancel"
+			android:text="@string/cancel"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+		android:orientation="vertical"
+		android:id="@+id/llNoTeams"
+		android:visibility="gone">
+
+		<TextView
+			style="@style/TextViewStyle.Big.Bold"
+			android:id="@+id/tvNoTeams"
+			android:text="@string/noTeamsFound"/>
+
+		<Button
+			style="@style/ButtonStyle"
+			android:id="@+id/btnCancel"
+			android:text="@string/cancel"/>
+
+	</LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

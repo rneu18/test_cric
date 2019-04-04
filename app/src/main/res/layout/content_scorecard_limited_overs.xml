@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	app:layout_behavior="@string/appbar_scrolling_view_behavior"
+	android:orientation="vertical">
+
+	<!-- Layout Having the Score Details -->
+    <include layout="@layout/content_scorecard_score" />
+
+    <!-- Layout Having the Batsmen, Extras & Bowler details -->
+    <include layout="@layout/content_scorecard_player_extra_details" />
+
+    <!-- Layout with the scoring buttons in it -->
+    <include layout="@layout/content_scorecard_scoring_buttons"/>
+
+    <Button
+        android:id="@+id/btnSelBatsman"
+        style="@style/ButtonStyle"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/selBatsman"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btnSelFacingBatsman"
+        style="@style/ButtonStyle"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/selFacingBatsman"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tvOutBatsmanDetails"
+        style="@style/TextViewStyle"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/outBatsmanData"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btnSelBowler"
+        style="@style/ButtonStyle"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/selBowler"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tvInningsComplete"
+        style="@style/TextViewStyle.Bold.Medium.MorePadding"
+        android:text="@string/inningsComplete"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btnStartNextInnings"
+        style="@style/ButtonStyle"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/startNextInnings"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/tvResult"
+        style="@style/TextViewStyle.Big.Bold.Highlight"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/llCompleteMatch"
+		android:orientation="vertical"
+		android:visibility="gone">
+
+		<RadioGroup
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center_horizontal"
+			android:id="@+id/rgPoM"
+			android:contentDescription="@string/playerOfMatch"
+			android:orientation="horizontal">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/poMFrom"/>
+
+			<RadioButton
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/rbPoMTeam1"/>
+
+			<RadioButton
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:id="@+id/rbPoMTeam2"/>
+
+		</RadioGroup>
+
+		<TextView
+			style="@style/TextViewStyle.Bold.Medium"
+			android:layout_gravity="center_horizontal"
+			android:id="@+id/tvPoM"
+			android:text="@string/tvPoMData"
+			android:visibility="gone"/>
+
+		<Button
+			android:id="@+id/btnClose"
+			style="@style/ButtonStyle"
+			android:layout_gravity="center_horizontal"
+			android:text="@string/closeMatch"/>
+
+	</LinearLayout>
+
+</LinearLayout>

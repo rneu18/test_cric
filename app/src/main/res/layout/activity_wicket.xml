@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".activity.WicketActivity"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+
+		<GridLayout
+			android:id="@+id/glWicket"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:columnCount="2"
+			android:columnOrderPreserved="true">
+
+				<RadioButton
+					android:id="@+id/rbWktCaught"
+					style="@style/RadioButtonStyle"
+					android:text="@string/wicket_caught"/>
+
+				<RadioButton
+					android:id="@+id/rbWktBowled"
+					style="@style/RadioButtonStyle"
+					android:text="@string/wicket_bowled"/>
+
+				<RadioButton
+					android:id="@+id/rbWktLBW"
+					style="@style/RadioButtonStyle"
+					android:text="@string/wicket_lbw"/>
+
+				<RadioButton
+					android:id="@+id/rbWktStump"
+					style="@style/RadioButtonStyle"
+					android:text="@string/wicket_stump"/>
+
+				<RadioButton
+					android:id="@+id/rbWktRunOut"
+					style="@style/RadioButtonStyle"
+					android:text="@string/wicket_runOut"/>
+
+				<RadioButton
+					android:id="@+id/rbWktHitWicket"
+					style="@style/RadioButtonStyle"
+					android:text="@string/wicket_hitWicket"/>
+
+				<RadioButton
+					android:id="@+id/rbWktRetiredHurt"
+					style="@style/RadioButtonStyle"
+					android:text="@string/wicket_retired"/>
+
+				<RadioButton
+					android:id="@+id/rbWktObstruct"
+					style="@style/RadioButtonStyle"
+					android:text="@string/wicket_obstruct"/>
+
+				<RadioButton
+					android:id="@+id/rbWktHitTwice"
+					style="@style/RadioButtonStyle"
+					android:text="@string/wicket_hitTwice"/>
+
+				<RadioButton
+					android:id="@+id/rbWktTimedOut"
+					style="@style/RadioButtonStyle"
+					android:text="@string/wicket_timedOut"
+					android:visibility="gone"/>
+
+		</GridLayout>
+
+		<View style="@style/LineSeparator"/>
+
+		<LinearLayout
+			android:id="@+id/llWicketDetails"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:background="@color/lime_100"
+			android:visibility="gone">
+
+			<TextView
+				style="@style/TextViewStyle"
+				android:text="@string/wicketDetails"/>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<LinearLayout
+					android:id="@+id/llEffectedBy"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_margin="@dimen/viewMarginDefault"
+					android:orientation="horizontal">
+
+					<Button
+						android:id="@+id/btnEffectedBy"
+						android:drawableStart="@drawable/ic_edit"
+						style="@style/ButtonStyle.Small"/>
+
+					<TextView
+						android:id="@+id/tvEffectedBy"
+						style="@style/TextViewStyle"
+						android:text="@string/caughtBy"
+						android:layout_width="0dp"
+						android:layout_weight="1"/>
+
+				</LinearLayout>
+
+				<LinearLayout
+					android:id="@+id/llOutBatsman"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_margin="@dimen/viewMarginDefault"
+					android:orientation="horizontal"
+					android:visibility="gone">
+
+					<Button
+						android:id="@+id/btnBatsmanOut"
+						android:drawableStart="@drawable/ic_edit"
+						style="@style/ButtonStyle.Small"/>
+
+					<TextView
+						android:id="@+id/tvBatsmanOut"
+						style="@style/TextViewStyle"
+						android:text="@string/batsmanOutText"
+						android:layout_width="0dp"
+						android:layout_weight="1"/>
+
+				</LinearLayout>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/llRORuns"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<TextView
+					android:id="@+id/tvRORunsScoredText"
+					android:layout_margin="@dimen/viewMarginDefault"
+					style="@style/TextViewStyle"
+					android:text="@string/runsScored"/>
+
+				<SeekBar
+					android:id="@+id/sbRORuns"
+					android:layout_width="0dp"
+					android:layout_weight="1"
+					android:layout_height="match_parent"
+					android:max="7"
+					android:progress="1"/>
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="@dimen/viewMarginDefault"
+				android:orientation="vertical"
+				android:id="@+id/llExtra">
+
+				<CheckBox
+					android:id="@+id/cbIsExtra"
+					style="@style/TextViewStyle"
+					android:checked="false"
+					android:text="@string/isExtra"/>
+
+				<GridLayout
+					android:id="@+id/glRORunsExtra"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:visibility="gone"
+					android:columnCount="4"
+					android:columnOrderPreserved="true">
+
+					<RadioButton
+						android:id="@+id/rbROWide"
+						style="@style/RadioButtonStyle"
+						android:text="@string/btnWideText"
+						android:checked="true"/>
+
+					<RadioButton
+						android:id="@+id/rbRONoBall"
+						style="@style/RadioButtonStyle"
+						android:text="@string/btnNoBallText" />
+
+					<RadioButton
+						android:id="@+id/rbROBye"
+						style="@style/RadioButtonStyle"
+						android:text="@string/btnByeText"/>
+
+					<RadioButton
+						android:id="@+id/rbROLegBye"
+						style="@style/RadioButtonStyle"
+						android:text="@string/btnLegByeText"/>
+
+				</GridLayout>
+
+				<RadioGroup
+					android:id="@+id/rgRONoBall"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:visibility="gone">
+
+					<RadioButton
+						android:id="@+id/rbRONoBallNone"
+						style="@style/RadioButtonStyle"
+						android:padding="0dp"
+						android:layout_margin="0dp"
+						android:checked="true"
+						android:text="@string/onlyNoBall"/>
+
+					<RadioButton
+						android:id="@+id/rbRONoBallBye"
+						android:padding="0dp"
+						android:layout_margin="0dp"
+						style="@style/RadioButtonStyle"
+						android:text="@string/noBallAndByes"/>
+
+					<RadioButton
+						android:id="@+id/rbRONoBallLegBye"
+						android:padding="0dp"
+						android:layout_margin="0dp"
+						style="@style/RadioButtonStyle"
+						android:text="@string/noBallAndLB"/>
+
+				</RadioGroup>
+
+			</LinearLayout>
+
+		</LinearLayout>
+
+		<LinearLayout
+			style="@style/LinearLayoutStyleSubmit">
+
+			<Button
+				style="@style/ButtonStyle.Submit"
+				android:id="@+id/btnWktCancel"
+				android:text="@string/cancel"/>
+
+			<Button
+				style="@style/ButtonStyle.Submit"
+				android:id="@+id/btnWktOK"
+				android:text="@string/ok"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</ScrollView>

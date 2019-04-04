@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+    android:id="@+id/svNewMatch">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:id="@+id/llNewMatch">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="horizontal">
+
+				<TextView
+					style="@style/TextViewStyle.Bold.Medium.MorePadding"
+					android:labelFor="@id/etMatchName"
+					android:text="@string/matchNameCD"/>
+
+				<EditText
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+					style="@style/EditTextStyle"
+					android:id="@+id/etMatchName"
+					android:inputType="text"
+					android:maxLength="50" />
+
+            </LinearLayout>
+
+			<!-- Match Details - Normal Match -->
+			<GridLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/glSingleMatch"
+				android:columnCount="4"
+				android:columnOrderPreserved="true"
+				android:contentDescription="@string/singleMatchView">
+
+				<TextView
+					style="@style/TextViewStyle.Bold.Medium.MorePadding"
+					android:text="@string/maxOvers"
+					android:labelFor="@id/etMaxOvers" />
+
+				<EditText
+                    android:id="@+id/etMaxOvers"
+                    style="@style/EditTextStyle"
+					android:layout_width="25sp"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:maxLength="2"
+					android:layout_columnWeight="1"
+					android:text="@string/maxOversValue" />
+
+                <TextView
+                    style="@style/TextViewStyle.Bold.Medium.MorePadding"
+                    android:text="@string/maxOversPerBowler"
+					android:labelFor="@id/etMaxPerBowler" />
+
+				<EditText
+                    android:id="@+id/etMaxPerBowler"
+                    style="@style/EditTextStyle"
+					android:layout_width="25sp"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+					android:layout_columnWeight="1"
+					android:maxLength="2" />
+
+				<TextView
+					style="@style/TextViewStyle.Bold.Medium.MorePadding"
+					android:text="@string/maxWickets"
+					android:labelFor="@id/etMaxWickets" />
+
+				<EditText
+                    android:id="@+id/etMaxWickets"
+                    style="@style/EditTextStyle"
+					android:layout_width="25sp"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+                    android:maxLength="2"
+					android:layout_columnWeight="1"
+					android:text="@string/maxWicketsValue" />
+
+				<TextView
+					style="@style/TextViewStyle.Bold.Medium.MorePadding"
+					android:text="@string/numPlayers"
+					android:labelFor="@id/etNumPlayers" />
+
+				<EditText
+                    android:id="@+id/etNumPlayers"
+                    style="@style/EditTextStyle"
+					android:layout_width="25sp"
+                    android:gravity="center_horizontal"
+                    android:inputType="number"
+					android:layout_columnWeight="1"
+					android:maxLength="2" />
+
+			</GridLayout>
+
+			<!-- Match Details - Tournament Match -->
+			<GridLayout
+				android:id="@+id/glTournamentMatch"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:columnCount="4"
+				android:columnOrderPreserved="true"
+				android:contentDescription="@string/tournamentMatchView"
+				android:visibility="gone">
+
+				<TextView
+					style="@style/TextViewStyle.Bold.Medium.MorePadding"
+					android:labelFor="@id/tvMaxOvers"
+					android:text="@string/maxOvers" />
+
+				<TextView
+					android:id="@+id/tvMaxOvers"
+					style="@style/TextViewStyle.Bold"
+					android:layout_columnWeight="1"/>
+
+				<TextView
+					style="@style/TextViewStyle.Bold.Medium.MorePadding"
+					android:labelFor="@id/tvMaxPerBowler"
+					android:text="@string/maxOversPerBowler" />
+
+				<TextView
+					android:id="@+id/tvMaxPerBowler"
+					style="@style/TextViewStyle.Bold"
+					android:layout_columnWeight="1"/>
+
+				<TextView
+					style="@style/TextViewStyle.Bold.Medium.MorePadding"
+					android:labelFor="@id/tvMaxWickets"
+					android:text="@string/maxWickets" />
+
+				<TextView
+					android:id="@+id/tvMaxWickets"
+					style="@style/TextViewStyle.Bold"
+					android:layout_columnWeight="1"/>
+
+				<TextView
+					style="@style/TextViewStyle.Bold.Medium.MorePadding"
+					android:labelFor="@id/tvNumPlayers"
+					android:text="@string/numPlayers" />
+
+				<TextView
+					android:id="@+id/tvNumPlayers"
+					style="@style/TextViewStyle.Bold"
+					android:layout_columnWeight="1"/>
+
+			</GridLayout>
+
+			<!-- Team Selection -->
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center_horizontal"
+				android:orientation="horizontal">
+
+				<Button
+					android:id="@+id/btnNMSelectTeam1"
+					style="@style/ButtonStyle.Medium"
+					android:drawableTop="@drawable/ic_select"
+					android:text="@string/selectTeam1" />
+
+				<Button
+					android:id="@+id/btnNMSelectTeam2"
+					style="@style/ButtonStyle.Medium"
+					android:drawableTop="@drawable/ic_select"
+					android:text="@string/selectTeam2" />
+
+			</LinearLayout>
+
+			<!-- Team Data -->
+
+			<TableLayout
+				android:id="@+id/tlNMTeamData"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:columnCount="3"
+				android:stretchColumns="1,2"
+				android:visibility="gone">
+
+				<!-- Separator -->
+				<View style="@style/LineSeparator.Dark.SmallMargin" />
+
+				<TableRow>
+
+					<TextView
+						style="@style/TextViewStyle.TableRow.Left.Border"
+						android:text="@string/team" />
+
+					<TextView
+						android:id="@+id/tvTeam1"
+						style="@style/TextViewStyle.TableRow.Header.Border" />
+
+					<TextView
+						android:id="@+id/tvTeam2"
+						style="@style/TextViewStyle.TableRow.Header.Border" />
+
+				</TableRow>
+
+				<TableRow>
+
+					<TextView
+						style="@style/TextViewStyle.TableRow.Left.Border"
+						android:text="@string/captain" />
+
+					<TextView
+						android:id="@+id/tvTeam1Captain"
+						style="@style/TextViewStyle.TableRow.Center" />
+
+					<TextView
+						android:id="@+id/tvTeam2Captain"
+						style="@style/TextViewStyle.TableRow.Center" />
+
+				</TableRow>
+
+				<TableRow>
+
+					<TextView
+						style="@style/TextViewStyle.TableRow.Left.Border"
+						android:text="@string/wicketKeeper" />
+
+					<TextView
+						android:id="@+id/tvTeam1WK"
+						style="@style/TextViewStyle.TableRow.Center" />
+
+					<TextView
+						android:id="@+id/tvTeam2WK"
+						style="@style/TextViewStyle.TableRow.Center" />
+
+				</TableRow>
+
+				<!-- Separator -->
+				<View style="@style/LineSeparator.Dark.SmallMargin" />
+
+			</TableLayout>
+
+			<TextView
+				style="@style/TextViewStyle"
+				android:id="@+id/tvMatchID"
+				android:visibility="gone"/>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:orientation="horizontal">
+
+				<Button
+					android:id="@+id/btnMatchCancel"
+					style="@style/ButtonStyle.Medium"
+					android:text="@string/cancel"
+                    android:visibility="gone"/>
+
+				<Button
+					android:id="@+id/btnValidate"
+					style="@style/ButtonStyle.Medium"
+					android:drawableTop="@drawable/ic_toss"
+					android:text="@string/toss"
+					android:visibility="gone" />
+
+			</LinearLayout>
+
+            <!-- Separator -->
+            <View style="@style/LineSeparator.Dark.SmallMargin"/>
+
+            <!-- Toss Won By -->
+            <RadioGroup
+                android:id="@+id/rgToss"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/TextViewStyle"
+					android:text="@string/tossWonBy"
+                    android:layout_width="100dp"/>
+
+                <RadioButton
+                    android:id="@+id/rbTossTeam1"
+                    style="@style/RadioButtonStyle"
+                    android:layout_width="100dp"/>
+
+                <RadioButton
+                    android:id="@+id/rbTossTeam2"
+                    style="@style/RadioButtonStyle"
+                    android:layout_width="100dp"/>
+
+            </RadioGroup>
+
+            <!-- Choose Batting/Bowling -->
+            <RadioGroup
+                android:id="@+id/rgTossChoose"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <TextView
+                    style="@style/TextViewStyle"
+                    android:text="@string/choose"
+                    android:layout_width="100dp"/>
+
+                <RadioButton
+                    android:id="@+id/rbTossBat"
+                    style="@style/RadioButtonStyle"
+                    android:layout_width="100dp"
+                    android:text="@string/batting"/>
+
+                <RadioButton
+                    android:id="@+id/rbTossBowl"
+                    style="@style/RadioButtonStyle"
+                    android:layout_width="100dp"
+                    android:text="@string/bowling"/>
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/btnStartMatch"
+                style="@style/ButtonStyle.Medium"
+                android:layout_gravity="center_horizontal"
+                android:drawableTop="@drawable/ic_start"
+                android:text="@string/startMatch"
+                android:visibility="gone"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:id="@+id/llInsufficientTeams"
+			android:visibility="gone">
+
+			<TextView
+				style="@style/TextViewStyle.Big"
+				android:layout_gravity="center_horizontal"
+				android:gravity="center"
+				android:id="@+id/tvInsufficientTeams"/>
+
+			<Button
+				style="@style/ButtonStyle"
+				android:id="@+id/btnManageTeam"
+				android:layout_gravity="center_horizontal"
+				android:text="@string/manageTeam"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</ScrollView>

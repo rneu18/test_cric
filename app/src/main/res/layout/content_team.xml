@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:columnOrderPreserved="true">
+
+        <TextView
+            style="@style/TextViewStyle.Bold.Medium.MorePadding"
+            android:text="@string/teamName"
+			android:labelFor="@id/etTeamName"/>
+
+        <EditText
+            style="@style/EditTextStyle"
+            android:layout_width="280dp"
+            android:maxLength="30"
+            android:id="@+id/etTeamName"
+            android:inputType="text"/>
+
+        <TextView
+            style="@style/TextViewStyle.Bold.Medium.MorePadding"
+            android:text="@string/teamShortName"
+            android:labelFor="@id/etTeamShortName"/>
+
+        <EditText
+            style="@style/EditTextStyle"
+            android:layout_width="80dp"
+			android:maxLength="8"
+            android:inputType="text"
+            android:id="@+id/etTeamShortName"/>
+
+		<View
+			style="@style/LineSeparator.Dark.Margin"
+			android:layout_columnSpan="2" />
+
+		<TextView
+            style="@style/TextViewStyle.Bold.Medium.MorePadding"
+            android:text="@string/players"
+            android:labelFor="@id/tvPlayers"/>
+
+		<LinearLayout>
+
+			<TextView
+				android:id="@+id/tvPlayers"
+				style="@style/TextViewStyle"
+				android:text="@string/none" />
+
+			<Button
+				android:id="@+id/btnTeamManagePlayers"
+				style="@style/ButtonStyle.Small"
+				android:drawableStart="@drawable/ic_assign" />
+
+		</LinearLayout>
+
+	</GridLayout>
+
+	<View style="@style/LineSeparator.Dark.Margin" />
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+		android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnSaveTeam"
+            style="@style/ButtonStyle.Medium"
+            android:drawableTop="@drawable/ic_save"
+            android:contentDescription="@string/save"
+            android:text="@string/save"/>
+
+		<Button
+			android:id="@+id/btnTeamClear"
+            style="@style/ButtonStyle.Medium"
+            android:drawableTop="@drawable/ic_clear"
+            android:contentDescription="@string/clear"
+            android:text="@string/clear"/>
+
+		<Button
+            android:id="@+id/btnDeleteTeam"
+            style="@style/ButtonStyle.Medium"
+            android:drawableTop="@drawable/ic_delete"
+            android:contentDescription="@string/delete"
+            android:text="@string/delete"
+			android:visibility="gone"/>
+
+	</LinearLayout>
+
+	<View style="@style/LineSeparator.Dark.Margin" />
+
+</LinearLayout>

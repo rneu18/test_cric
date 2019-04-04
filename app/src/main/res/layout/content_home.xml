@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:context=".activity.HomeActivity"
+	tools:showIn="@layout/app_bar_home"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_marginTop="20dp"
+        style="@style/TextViewStyle.Bold.Medium"
+        android:text="@string/matchData"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnNewMatch"
+			style="@style/ButtonStyle.Medium.Transparent"
+            android:drawableTop="@drawable/ic_add_screen"
+            android:contentDescription="@string/newMatch"
+            android:text="@string/newMatch"/>
+
+        <Button
+            android:id="@+id/btnLoadMatch"
+			style="@style/ButtonStyle.Medium.Transparent"
+            android:drawableTop="@drawable/ic_download"
+            android:contentDescription="@string/loadMatch"
+            android:text="@string/loadMatch"/>
+
+        <Button
+            android:id="@+id/btnDeleteMatches"
+			style="@style/ButtonStyle.Medium.Transparent"
+            android:drawableTop="@drawable/ic_delete"
+            android:contentDescription="@string/deleteMatches"
+            android:text="@string/deleteMatches"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnFinishedMatches"
+			style="@style/ButtonStyle.Medium.Transparent"
+            android:drawableTop="@drawable/ic_card"
+            android:contentDescription="@string/finishedMatches"
+            android:text="@string/finishedMatches"/>
+
+    </LinearLayout>
+
+	<!-- Separator -->
+	<View
+		style="@style/LineSeparator.Dark.Margin"
+		android:visibility="gone" />
+
+	<TextView
+		style="@style/TextViewStyle.Bold.Medium"
+		android:text="@string/tournament" />
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="start"
+		android:orientation="horizontal">
+
+		<Button
+			android:id="@+id/btnNewTournament"
+			style="@style/ButtonStyle.Medium.Transparent"
+			android:contentDescription="@string/newTournament"
+			android:drawableTop="@drawable/ic_new_trophy"
+			android:text="@string/newTournament" />
+
+		<Button
+			android:id="@+id/btnLoadTournament"
+			style="@style/ButtonStyle.Medium.Transparent"
+			android:contentDescription="@string/loadTournament"
+			android:drawableTop="@drawable/ic_trophy"
+			android:text="@string/loadTournament" />
+
+		<Button
+			android:id="@+id/btnFinishedTournaments"
+			style="@style/ButtonStyle.Medium.Transparent"
+			android:contentDescription="@string/finishedTournament"
+			android:drawableTop="@drawable/ic_finished_trophy"
+			android:text="@string/finishedTournament" />
+
+	</LinearLayout>
+
+	<!-- Separator -->
+	<View style="@style/LineSeparator.Dark.Margin" />
+
+	<TextView
+        style="@style/TextViewStyle.Bold.Medium"
+        android:text="@string/manage"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnManageTeam"
+            android:drawableTop="@drawable/ic_people"
+            android:contentDescription="@string/team"
+            android:text="@string/team"
+			style="@style/ButtonStyle.Medium.Transparent" />
+
+		<Button
+			android:id="@+id/btnManagePlayer"
+			android:drawableTop="@drawable/ic_person"
+			android:contentDescription="@string/player"
+			android:text="@string/player"
+			style="@style/ButtonStyle.Medium.Transparent" />
+
+    </LinearLayout>
+
+    <!-- Separator -->
+    <View style="@style/LineSeparator.Dark.Margin"/>
+
+</LinearLayout>
